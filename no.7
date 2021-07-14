@@ -1,0 +1,39 @@
+ while True:
+        cue = input('Enter n to deal a new hand, r to replay the last hand, or e to end game: ')
+        if cue == 'n':
+            hand = dealHand(HAND_SIZE)
+            while True:
+                cue2 = input('Enter u to have yourself play, c to have the computer play: ')
+            
+                if cue2 == 'u':
+                    playHand(hand, wordList, HAND_SIZE)
+                    break
+                elif cue2 =='c':
+                    compPlayHand(hand, wordList, HAND_SIZE)
+                    break
+                else:
+                    print('Invalid command.')
+        
+        elif cue == 'r':
+            try:
+                hand = hand
+                while True:
+                    cue2 = input('Enter u to have yourself play, c to have the computer play: ')
+                    print()
+                
+                    if cue2 == 'u':
+                        playHand(hand, wordList, HAND_SIZE)
+                        break
+                    elif cue2 =='c':
+                        compPlayHand(hand, wordList, HAND_SIZE)
+                        break
+                    else:
+                        print('Invalid command.')
+            except: 
+                print('You have not played a hand yet. Please play a new hand first!')
+            
+        elif cue == 'e':
+            break
+        
+        else:
+            print('Invalid command.')
